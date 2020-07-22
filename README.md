@@ -1,0 +1,1 @@
+Trello Board: https://trello.com/b/uWUraUI0/javascript-assignment-blog-post
