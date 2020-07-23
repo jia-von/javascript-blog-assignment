@@ -35,14 +35,17 @@ class Article
                 const titleListItem = document.createElement("article"); //create a <artile element> element
                 titleListItem.textContent = titleValue;
                 document.body.appendChild(titleListItem); //Append the titleListItem to <aritcle> node
+                }
+            }
+                //Use template literals to append????????
                 
-                let contentIndex = 0;
+                /*let contentIndex = 0;
                 const contentListItem = document.createElement("p"); //create p element
                 contentListItem.textContent = this.content[contentIndex];
                 titleListItem.appendChild(contentListItem);
                 contentIndex = ++contentIndex; //why doesn't the increment increase?
                 }
-            }//end of outputTitle
+            }//end of outputTitle*/
  
     }//end of class
 
