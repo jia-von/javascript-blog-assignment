@@ -27,27 +27,38 @@ class Article
             this.title = title;
             this.content = content;      
             }
+        
         outputTitle() //start of outputTitle
             {
             for (const titleValue of this.title)
-            {
-                
-                const titleListItem = document.createElement("article"); //create a <h2> element
+                {
+                const titleListItem = document.createElement("article"); //create a <artile element> element
                 titleListItem.textContent = titleValue;
-                document.body.appendChild(titleListItem); //Append the titleListItem to <h2> node
-
+                document.body.appendChild(titleListItem); //Append the titleListItem to <aritcle> node
                 
-                const contentListItem = document.createElement("p") //create p element
-                contentListItem.textContent = this.content[0]; //push out content underneath p
-                titleListItem.appendChild(contentListItem); //append the content to the titlelistitem @link: Parent Node was referenced : https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append 
-            }
+                let contentIndex = 0;
+                const contentListItem = document.createElement("p"); //create p element
+                contentListItem.textContent = this.content[contentIndex];
+                titleListItem.appendChild(contentListItem);
+                contentIndex = ++contentIndex;
+                }
             }//end of outputTitle
         
-       
+        /*outputContent () //start of outputContent
+            {    
+                const contentListItem = document.createElement("p"); //create p element
+                const contentIndex = 0;
+                contentListItem.textContent = this.content[contentIndex]; //push out content underneath p, my reiterate similarly to the titleListItem
+                document.body.appendChild(contentListItem);
+                //titleListItem.appendChild(contentListItem); //append the content to the titlelistitem @link: Parent Node was referenced : https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append                
+            }//end of outputContent*/
+ 
     }//end of class
 
-    const blogTitle = new Article;
-        blogTitle.outputTitle();
+    const blogPostOne = new Article;
+    blogPostOne.outputTitle();
+
+   
     
 
 
