@@ -32,26 +32,20 @@ class Article
             }
         outputTitle() 
             {
-            const titleList = document.createElement("article"); //create an article node
             for (const titleValue of title)
             {
-                const titleListItem = document.createElement("h2"); //create a <h2> element
+                
+                const titleListItem = document.createElement("article"); //create a <h2> element
                 titleListItem.textContent = titleValue;
-                titleList.appendChild(titleListItem); //Append the titleListItem to <h2> node
+                document.body.appendChild(titleListItem); //Append the titleListItem to <h2> node
+
+                const contentListItem = document.createElement("p") //create p element
+                contentListItem.textContent = content; //push out content underneath p
+                titleListItem.appendChild(contentListItem); //append the content to the titlelistitem @link: Parent Node was referenced : https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append 
+
             }
-            document.body.appendChild(titleList); //Append <article> to the <body>
-        }
-        outputContent()
-        {
             
-            for(const contentValue of content)
-            {
-                const contentList = document.querySelector("h2");
-                const contentListItem = document.createElement("p");
-                contentListItem.textContent = contentValue;
-                contentList.appendChild(contentListItem);
-            }
-            document.body.appendChild(contentList);
+            //document.body.appendChild(titleList); //Append <article> to the <body>
         }
         
        
@@ -59,7 +53,6 @@ class Article
 
     const blogTitle = new Article;
         blogTitle.outputTitle();
-        blogTitle.outputContent();
     
 
 
