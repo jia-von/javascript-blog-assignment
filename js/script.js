@@ -1,52 +1,47 @@
 //JSON - JavaScript Object Notation
 //Create a class named article
 //string in arrays declared in global
-const title = 
-    [
-        "First Day of Class (C#)",
-        "How to Build Websites! (HTML)",
-        "Brand new Topic (CSS)",
-        "Another New Topic!?(JS)",
-        "Adding on to our JS (TS)",
-        "Time to Reach"
-    ];
 
-const content = 
-    [
-        "Oh C# is a programming language, often used for Windows programs... this could be really useful! It has variables, loops, and even methods; a lot to learn, but it really opens up doors!",
-        "What a great day! We learned all about HRML, or, Hyper Text Markup Language. It is the content and skeleton of the website",
-        "Today we learned about CSS, or, Cascading Style Sheets - how cool! This language helps us make our sites look pretty, we get to define the styles",
-        "Wow! I thought the other languages were pretty neat, but this one takes the cake so far, JS, or JavaScript, can be used to bring our websites to LIFE! It is used for functionality within the webpage",
-        "Whoe knew we could use something to check our code for errors and offer additional featues to JavaScript?! TS, or TypeScript, is a superset of JavaScript that compiles to regular JS. The extra features will come in handy!",
-        "Our very first large JavaScript framework, how exciting! Now we can build web components and build more complext front-ends with ease... a bit of learning curve but so useful now that we are getting the hang of it"
-   
-    ];
 //global output for title
 
 class Article  
     {//Start of class
-        constructor (title=[], content=[])
+        constructor (
+            title=[
+            "First Day of Class (C#)",
+            "How to Build Websites! (HTML)",
+            "Brand new Topic (CSS)",
+            "Another New Topic!?(JS)",
+            "Adding on to our JS (TS)",
+            "Time to Reach"
+            ], 
+            content=[
+            "Oh C# is a programming language, often used for Windows programs... this could be really useful! It has variables, loops, and even methods; a lot to learn, but it really opens up doors!",
+            "What a great day! We learned all about HRML, or, Hyper Text Markup Language. It is the content and skeleton of the website",
+            "Today we learned about CSS, or, Cascading Style Sheets - how cool! This language helps us make our sites look pretty, we get to define the styles",
+            "Wow! I thought the other languages were pretty neat, but this one takes the cake so far, JS, or JavaScript, can be used to bring our websites to LIFE! It is used for functionality within the webpage",
+            "Whoe knew we could use something to check our code for errors and offer additional featues to JavaScript?! TS, or TypeScript, is a superset of JavaScript that compiles to regular JS. The extra features will come in handy!",
+            "Our very first large JavaScript framework, how exciting! Now we can build web components and build more complext front-ends with ease... a bit of learning curve but so useful now that we are getting the hang of it"
+            ])
             {
             this.title = title;
             this.content = content;      
             }
-        outputTitle() 
+        outputTitle() //start of outputTitle
             {
-            for (const titleValue of title)
+            for (const titleValue of this.title)
             {
                 
                 const titleListItem = document.createElement("article"); //create a <h2> element
                 titleListItem.textContent = titleValue;
                 document.body.appendChild(titleListItem); //Append the titleListItem to <h2> node
 
+                
                 const contentListItem = document.createElement("p") //create p element
-                contentListItem.textContent = content; //push out content underneath p
+                contentListItem.textContent = this.content[0]; //push out content underneath p
                 titleListItem.appendChild(contentListItem); //append the content to the titlelistitem @link: Parent Node was referenced : https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append 
-
             }
-            
-            //document.body.appendChild(titleList); //Append <article> to the <body>
-        }
+            }//end of outputTitle
         
        
     }//end of class
