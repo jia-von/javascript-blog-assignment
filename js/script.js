@@ -3,8 +3,8 @@
 //string in arrays declared in global
 const title = 
     [
-        "First Day of CLass (C#)",
-        "How to Build Websies! (HTML)",
+        "First Day of Class (C#)",
+        "How to Build Websites! (HTML)",
         "Brand new Topic (CSS)",
         "Another New Topic!?(JS)",
         "Adding on to our JS (TS)",
@@ -33,26 +33,26 @@ class Article
         }
         outputTitle() 
             {
-            const titleList = document.createElement("article");
+            const titleList = document.createElement("article"); //create an article node
             for (let index = 0; index<title.length; index++)
             {
-            const titleListItem = document.createElement("h2");
-            titleListItem.textContent = title[index];
-            titleList.appendChild(titleListItem);
+                const titleListItem = document.createElement("h2"); //create a <h2> text node
+                titleListItem.textContent = title[index];
+                titleList.appendChild(titleListItem); //Append the titleListItem to <h2> node
             }
-        document.body.appendChild(titleList);
-        }
+            document.body.appendChild(titleList); //Append <article> to the <body>
+            }
         outputContent() 
             {
-            const contentList = document.createElement("p");
-            for (let index = 0; content<title.length; index++)
+            for (let index = 0; index<content.length; index++)
             {
-            const contentListItem = document.createElement("p");
-            contentListItem.textContent = title[index];
-            contentList.appendChild(contentListItem);
+                const contentListItem = document.createElement("p");
+                contentListItem.textContent = content[index];
+                const parentTitle = document.querySelector("h2");
+                parentTitle.appendChild(contentListItem); 
             }
-        document.h2.appendChild(contentList);
-        }
+            document.body.appendChild(contentList);
+            }
        
     }//end of class
 
