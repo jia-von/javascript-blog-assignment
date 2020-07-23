@@ -43,14 +43,23 @@ class Article
         }
         outputContent()
         {
-
+            
+            for(const contentValue of content)
+            {
+                const contentList = document.querySelector("h2");
+                const contentListItem = document.createElement("p");
+                contentListItem.textContent = contentValue;
+                contentList.appendChild(contentListItem);
+            }
+            document.body.appendChild(contentList);
         }
-
+        
        
     }//end of class
 
     const blogTitle = new Article;
         blogTitle.outputTitle();
+        blogTitle.outputContent();
     
 
 
