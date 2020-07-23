@@ -23,42 +23,34 @@ const content =
     ];
 //global output for title
 
-
 class Article  
     {//Start of class
         constructor (title=[], content=[])
-        {
+            {
             this.title = title;
             this.content = content;      
-        }
+            }
         outputTitle() 
             {
             const titleList = document.createElement("article"); //create an article node
-            for (let index = 0; index<title.length; index++)
+            for (const titleValue of title)
             {
-                const titleListItem = document.createElement("h2"); //create a <h2> text node
-                titleListItem.textContent = title[index];
+                const titleListItem = document.createElement("h2"); //create a <h2> element
+                titleListItem.textContent = titleValue;
                 titleList.appendChild(titleListItem); //Append the titleListItem to <h2> node
             }
             document.body.appendChild(titleList); //Append <article> to the <body>
-            }
-        outputContent() 
-            {
-            for (let index = 0; index<content.length; index++)
-            {
-                const contentListItem = document.createElement("p");
-                contentListItem.textContent = content[index];
-                const parentTitle = document.querySelector("h2");
-                parentTitle.appendChild(contentListItem); 
-            }
-            document.body.appendChild(contentList);
-            }
+        }
+        outputContent()
+        {
+
+        }
+
        
     }//end of class
 
     const blogTitle = new Article;
         blogTitle.outputTitle();
-        blogTitle.outputContent();
     
 
 
