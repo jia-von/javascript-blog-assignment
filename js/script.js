@@ -40,18 +40,9 @@ class Article
                 const contentListItem = document.createElement("p"); //create p element
                 contentListItem.textContent = this.content[contentIndex];
                 titleListItem.appendChild(contentListItem);
-                contentIndex = ++contentIndex;
+                contentIndex = ++contentIndex; //why doesn't the increment increase?
                 }
             }//end of outputTitle
-        
-        /*outputContent () //start of outputContent
-            {    
-                const contentListItem = document.createElement("p"); //create p element
-                const contentIndex = 0;
-                contentListItem.textContent = this.content[contentIndex]; //push out content underneath p, my reiterate similarly to the titleListItem
-                document.body.appendChild(contentListItem);
-                //titleListItem.appendChild(contentListItem); //append the content to the titlelistitem @link: Parent Node was referenced : https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append                
-            }//end of outputContent*/
  
     }//end of class
 
